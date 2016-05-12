@@ -8,5 +8,9 @@
     <orderEntry type="library" name="aws-sdk-2.3.9" level="application" />
     <orderEntry type="library" name="aws-sdk-2.1.41" level="application" />
     <orderEntry type="library" name="platform" level="application" />
+    <orderEntry type="library" name="angular-animate" level="application" />
+    <orderEntry type="library" name="angular-aria" level="application" />
+    <orderEntry type="library" name="angular-messages" level="application" />
+    <orderEntry type="library" name="angular-material" level="application" />
   </component>
 </module>
