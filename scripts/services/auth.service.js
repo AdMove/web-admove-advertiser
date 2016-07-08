@@ -42,6 +42,7 @@
             $cookies.remove('user.email');
             $cookies.remove('user.name');
             $cookies.remove('user.photo');
+
             ns.goLogin();
         }
 

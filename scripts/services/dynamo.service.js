@@ -7,23 +7,24 @@
 
     Dynamo.$inject = ['$q'];
     function Dynamo($q) {
-        var free_users_table = 'admove-mobilehub-297572719-FreeUsers';
+        var users_table = 'admove-mobilehub-297572719-UsersData';
         var locations_table = 'admove-mobilehub-297572719-Locations';
         var dynamodb;
 
         var service = {};
 
         service.getFreeUsers = function () {
-            if (!dynamodb) {
-                dynamodb = new AWS.DynamoDB();
-            }
-            return callWithParams({TableName: free_users_table}, 'scan');
+            var params = {
+                TableName: users_table,
+                FilterExpression: 'take_suggestions = :suggestion',
+                ExpressionAttributeValues: {
+                    ':suggestion': {BOOL: true}
+                }
+            };
+            return callWithParams(params, 'scan');
         };
 
         service.getLocationsOfUser = function (userId) {
-            if (!dynamodb) {
-                dynamodb = new AWS.DynamoDB();
-            }
             var params = {
                 TableName: locations_table,
                 KeyConditionExpression: "userId = :uid",
@@ -35,9 +36,6 @@
         };
 
         service.getFilteredLocationsOfUser = function (userId, startDate, endDate) {
-            if (!dynamodb) {
-                dynamodb = new AWS.DynamoDB();
-            }
             var params = {
                 TableName: locations_table,
                 KeyConditionExpression: 'userId = :uid',
@@ -54,6 +52,9 @@
         return service;
 
         function callWithParams(params, fun) {
+            if (!dynamodb) {
+                dynamodb = new AWS.DynamoDB();
+            }
             var deferred = $q.defer();
             dynamodb[fun || 'query'](params, function (e, data) {
                 if (e) {
