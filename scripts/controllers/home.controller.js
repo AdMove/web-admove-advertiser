@@ -7,8 +7,8 @@
         .controller('LeftCtrl', LeftCtrl)
         .controller('RightCtrl', RightCtrl);
 
-    HomeController.$inject = ['$scope', '$timeout', '$mdSidenav', '$log', '$cookies', 'AuthService', 'NavigationService', 'MapService'];
-    function HomeController($scope, $timeout, $mdSidenav, $log, $cookies, as, ns, ms) {
+    HomeController.$inject = ['$scope', '$timeout', '$mdSidenav', '$log', '$cookies', 'AuthService', 'NavigationService', 'MapService', 'DialogService'];
+    function HomeController($scope, $timeout, $mdSidenav, $log, $cookies, as, ns, ms, ds) {
         $scope.$on('$viewContentLoaded', function () {
             var provider = $cookies.get('auth_provider');
             var token = $cookies.get('auth_token');
@@ -43,7 +43,23 @@
 
         $scope.showFreeUsers = function () {
             $scope.selected = 'freeUsers';
-            ms.showFreeUsers();
+            ms.showFreeUsers()
+                .then(function (data) {
+                    console.log(data);
+                    angular.forEach(data, function (item) {
+                        google.maps.event.addListener(item.line, 'click', function () {
+                            ds.confirm(
+                                'User',
+                                    item.user.carProducer.S + " " + item.user.carModel.S + " (" + item.user.carProductionYear.S + ")",
+                                'Advertise',
+                                'Cancel')
+                                .then(function () {
+                                    ds.alert('Call him/her', item.user.phoneNumber.S);
+                                });
+                        });
+                    });
+                });
+
         };
 
         $scope.showMyUsers = function () {
@@ -152,7 +168,7 @@
             ms.updateFilter({
                 startDate: s,
                 endDate: e
-            }).then(function(){
+            }).then(function () {
                 $scope.close();
             });
         };

@@ -16,7 +16,7 @@
         service.getFreeUsers = function () {
             var params = {
                 TableName: users_table,
-                FilterExpression: 'take_suggestions = :suggestion',
+                FilterExpression: 'takeSuggestions = :suggestion',
                 ExpressionAttributeValues: {
                     ':suggestion': {BOOL: true}
                 }

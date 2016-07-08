@@ -57,13 +57,16 @@
             roads = [];
         };
 
+
         service.showFreeUsers = function () {
             var deferred = $q.defer();
             currentUsers = 'freeUsers';
             service.clearRoads();
             dynamo.getFreeUsers()
                 .then(function (data) {
-                    angular.forEach(data.Items, function (item) {
+                    var polylines = [];
+                    var users = data.Items;
+                    angular.forEach(users, function (item, index) {
                         var color = getRandomColor();
                         var promise;
                         if (filter){
@@ -75,11 +78,15 @@
                             .then(function (data) {
                                 var roads = splitRoad(data.Items);
                                 angular.forEach(roads, function (road) {
-                                    service.placeRoad(road.map(function (item) {
+                                    var line = service.placeRoad(road.map(function (item) {
                                         return new google.maps.LatLng(item.latitude.N, item.longitude.N);
                                     }), color);
+                                    polylines.push({line: line, user: item});
+                                    map.setCenter(new google.maps.LatLng(road[road.length - 1].latitude.N, road[road.length - 1].longitude.N));
                                 });
-                                deferred.resolve();
+                                if (index >= users.length-1) {
+                                    deferred.resolve(polylines);
+                                }
                             });
                     });
                 });
