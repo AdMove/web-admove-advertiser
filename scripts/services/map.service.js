@@ -52,6 +52,8 @@
 
         service.clearRoads = function () {
             angular.forEach(roads, function (road) {
+                google.maps.event.clearListeners(road, 'mouseover');
+                google.maps.event.clearListeners(road, 'mouseout');
                 road.setMap(null);
             });
             roads = [];
@@ -87,6 +89,43 @@
                                 if (index >= users.length-1) {
                                     deferred.resolve(polylines);
                                 }
+                            });
+                    });
+                });
+            return deferred.promise;
+        };
+
+        service.showMyUsers = function(uid){
+            var deferred = $q.defer();
+            currentUsers = 'freeUsers';
+            service.clearRoads();
+            dynamo.getMyUsers(uid)
+                .then(function (data) {
+                    var polylines = [];
+                    var users = data.Item.users.SS;
+                    angular.forEach(users, function (item, index) {
+                        var color = getRandomColor();
+                        var promise;
+                        if (filter){
+                            promise = dynamo.getFilteredLocationsOfUser(item, filter.startDate, filter.endDate);
+                        }else{
+                            promise = dynamo.getLocationsOfUser(item);
+                        }
+                        promise
+                            .then(function (data) {
+                                var roads = splitRoad(data.Items);
+                                angular.forEach(roads, function (road) {
+                                    var line = service.placeRoad(road.map(function (item) {
+                                        return new google.maps.LatLng(item.latitude.N, item.longitude.N);
+                                    }), color);
+                                    dynamo.getUserSettings(item).then(function(user){
+                                        polylines.push({line: line, user: user.Item});
+                                        if (index >= users.length-1) {
+                                            deferred.resolve(polylines);
+                                        }
+                                    });
+                                    map.setCenter(new google.maps.LatLng(road[road.length - 1].latitude.N, road[road.length - 1].longitude.N));
+                                });
                             });
                     });
                 });

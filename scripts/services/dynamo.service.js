@@ -8,6 +8,7 @@
     Dynamo.$inject = ['$q'];
     function Dynamo($q) {
         var users_table = 'admove-mobilehub-297572719-UsersData';
+        var advertisers_table = 'admove-advertiser-137513719-AdvertiserData';
         var locations_table = 'admove-mobilehub-297572719-Locations';
         var dynamodb;
 
@@ -18,10 +19,30 @@
                 TableName: users_table,
                 FilterExpression: 'takeSuggestions = :suggestion',
                 ExpressionAttributeValues: {
-                    ':suggestion': {BOOL: true}
+                    ':suggestion': {N: '1'}
                 }
             };
             return callWithParams(params, 'scan');
+        };
+
+        service.getMyUsers = function(uid){
+            var params = {
+                TableName: advertisers_table,
+                Key: {
+                    userId: {S: uid}
+                }
+            };
+            return callWithParams(params, 'getItem');
+        };
+
+        service.getUserSettings = function(uid){
+            var params = {
+                TableName: users_table,
+                Key: {
+                    userId: {S: uid}
+                }
+            };
+            return callWithParams(params, 'getItem');
         };
 
         service.getLocationsOfUser = function (userId) {

@@ -50,19 +50,19 @@
                         google.maps.event.addListener(item.line, 'click', function () {
                             ds.showUser(
                                 'User',
-                                    item.user.carProducer.S + " " + item.user.carModel.S + " (" + item.user.carProductionYear.S + ")\n"+item.user.phoneNumber.S,
+                                    item.user.carProducer.S + " " + item.user.carModel.S + " (" + item.user.carProductionYear.S + ")\n" + item.user.phoneNumber.S,
                                 'Advertise',
                                 'Cancel')
                                 .then(function () {
                                     ds.alert('Call him/her', item.user.phoneNumber.S);
                                 });
                         });
-                        google.maps.event.addListener(item.line, 'mouseover', function(){
+                        google.maps.event.addListener(item.line, 'mouseover', function () {
                             item.line.setOptions({
                                 strokeWeight: 6
                             });
                         });
-                        google.maps.event.addListener(item.line, 'mouseout', function(){
+                        google.maps.event.addListener(item.line, 'mouseout', function () {
                             item.line.setOptions({
                                 strokeWeight: 3
                             });
@@ -74,7 +74,32 @@
 
         $scope.showMyUsers = function () {
             $scope.selected = 'myUsers';
-            alert('This service is not implemented yet');
+            ms.showMyUsers(AWS.config.credentials.identityId)
+                .then(function (data) {
+                    if (data.length == 0) {
+                        ds.alert('You have no users');
+                    }
+                    angular.forEach(data, function (item) {
+                        google.maps.event.addListener(item.line, 'click', function () {
+                            ds.showUser(
+                                'User',
+                                item.user.carProducer.S + " " + item.user.carModel.S + " (" + item.user.carProductionYear.S + ")\n" + item.user.phoneNumber.S,
+                                'Ok');
+                        });
+                        google.maps.event.addListener(item.line, 'mouseover', function () {
+                            item.line.setOptions({
+                                strokeWeight: 6
+                            });
+                        });
+                        google.maps.event.addListener(item.line, 'mouseout', function () {
+                            item.line.setOptions({
+                                strokeWeight: 3
+                            });
+                        });
+                    });
+
+                });
+
         };
 
         $scope.user = {

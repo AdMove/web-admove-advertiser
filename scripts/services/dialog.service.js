@@ -63,6 +63,7 @@
             return $mdDialog.show({
                 controller: DialogController,
                 templateUrl: 'templates/user.card.dialog.html',
+                ariaLabel: 'userCard',
                 parent: angular.element(document.body)
             });
         }
