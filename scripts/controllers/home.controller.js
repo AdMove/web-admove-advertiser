@@ -48,14 +48,24 @@
                     console.log(data);
                     angular.forEach(data, function (item) {
                         google.maps.event.addListener(item.line, 'click', function () {
-                            ds.confirm(
+                            ds.showUser(
                                 'User',
-                                    item.user.carProducer.S + " " + item.user.carModel.S + " (" + item.user.carProductionYear.S + ")",
+                                    item.user.carProducer.S + " " + item.user.carModel.S + " (" + item.user.carProductionYear.S + ")\n"+item.user.phoneNumber.S,
                                 'Advertise',
                                 'Cancel')
                                 .then(function () {
                                     ds.alert('Call him/her', item.user.phoneNumber.S);
                                 });
+                        });
+                        google.maps.event.addListener(item.line, 'mouseover', function(){
+                            item.line.setOptions({
+                                strokeWeight: 6
+                            });
+                        });
+                        google.maps.event.addListener(item.line, 'mouseout', function(){
+                            item.line.setOptions({
+                                strokeWeight: 3
+                            });
                         });
                     });
                 });

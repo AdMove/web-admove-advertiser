@@ -19,8 +19,8 @@
         };
     }
 
-    config.$inject = ['$routeProvider', '$mdDateLocaleProvider'];
-    function config($routeProvider, $mdDateLocaleProvider) {
+    config.$inject = ['$routeProvider', '$mdDateLocaleProvider', '$mdThemingProvider'];
+    function config($routeProvider, $mdDateLocaleProvider, $mdThemingProvider) {
         $routeProvider
             .when('/home', {
                 controller: 'HomeController',
@@ -49,6 +49,7 @@
                 return 'Choose Date';
             }
         };
+        $mdThemingProvider.theme('dark-blue').backgroundPalette('blue').dark();
     }
 
     run.$inject = ['$window'];

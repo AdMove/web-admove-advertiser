@@ -9,7 +9,8 @@
         var service = {
             alert: alert,
             prompt: prompt,
-            confirm: confirm
+            confirm: confirm,
+            showUser: showUser
         };
 
         return service;
@@ -44,6 +45,26 @@
                 .ok(okTitle)
                 .cancel(cancelTitle);
             return $mdDialog.show(confirm);
+        }
+
+        function showUser(title, body, okTitle, cancelTitle) {
+            function DialogController($scope, $mdDialog) {
+                $scope.title = title;
+                $scope.body = body;
+                $scope.okTitle = okTitle;
+                $scope.cancelTitle = cancelTitle;
+                $scope.cancel = function() {
+                    $mdDialog.cancel();
+                };
+                $scope.ok = function() {
+                    $mdDialog.hide();
+                };
+            }
+            return $mdDialog.show({
+                controller: DialogController,
+                templateUrl: 'templates/user.card.dialog.html',
+                parent: angular.element(document.body)
+            });
         }
 
     }
