@@ -86,6 +86,7 @@
                                 item.user.carProducer.S + " " + item.user.carModel.S + " (" + item.user.carProductionYear.S + ")\n" + item.user.phoneNumber ? item.user.phoneNumber.S : '',
                                 'Ok');
                         });
+                        
                         google.maps.event.addListener(item.line, 'mouseover', function () {
                             item.line.setOptions({
                                 strokeWeight: 6
