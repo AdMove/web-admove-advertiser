@@ -47,6 +47,22 @@
             });
             p.setMap(map);
             roads.push(p);
+
+            var info = new google.maps.InfoWindow({
+                content: ''+distance(road)
+            });
+            var marker = new google.maps.Marker({
+                title: ''+distance(road)
+            });
+            google.maps.event.addListener(p, 'mouseover', function (e) {
+                marker.setPosition(e.latLng);
+                marker.setMap(map);
+                info.open(map, marker);
+            });
+            google.maps.event.addListener(p, 'mouseout', function () {
+                marker.setMap(null);
+            });
+
             return p;
         };
 
@@ -142,6 +158,46 @@
         return service;
     }
 
+    function distance(args){
+        var data;
+        if (Object.prototype.toString.call( args ) === '[object Array]'){
+            data = args;
+        }else{
+            data = arguments;
+        }
+        if (data.length > 1){
+            var p1 = data[0];
+            var distance = 0;
+            for (var i=1; i<data.length; i++){
+                var p2 = data[i];
+                distance += _dist(p1, p2);
+                p1 = p2;
+            }
+            return distance;
+        }
+    }
+
+    function _dist(point1, point2){
+        var lat1 = point1.lat();
+        var lat2 = point2.lat();
+        var lon1 = point1.lng();
+        var lon2 = point2.lng();
+        var R = 6371; // Radius of the earth in km
+        var dLat = _deg2rad(lat2-lat1);
+        var dLon = _deg2rad(lon2-lon1);
+        var a =
+                Math.sin(dLat/2) * Math.sin(dLat/2) +
+                Math.cos(_deg2rad(lat1)) * Math.cos(_deg2rad(lat2)) *
+                Math.sin(dLon/2) * Math.sin(dLon/2)
+            ;
+        var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
+        var d = R * c; // Distance in km
+        return d;
+    }
+
+    function _deg2rad(deg) {
+        return deg * (Math.PI/180)
+    }
 
     function getRandomColor() {
         var letters = '0123456789ABCDEF'.split('');
