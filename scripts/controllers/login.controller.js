@@ -52,8 +52,8 @@
         $scope.$on('event:google-plus-signin-success', function (event, authResult) {
             var id_token = authResult.Zi.id_token;
             as.login('accounts.google.com', id_token, function (callback) {
-                var user = gapi.auth2.getAuthInstance().currentUser.hg.wc;
-                callback({email: user.Zi, name: user.wc, picture: user.Ph});
+                var user = gapi.auth2.getAuthInstance().currentUser.Aia.value.w3;
+                callback({email: user.U3, name: user.ig, picture: user.Paa});
             });
         });
     }
