@@ -1,0 +1,42 @@
+<div id="confirm-v2" class="flex-scrollable" layout="column" ms-scroll>
+    <div id="confirm-v2-form-wrapper" layout="column" layout-align="center center">
+        <div id="confirm-v2-form" class="md-whiteframe-8dp">
+            <div class="logo md-accent-bg">
+                <span>F</span>
+            </div>
+
+            <div class="title" translate="CONFIRM_V2.TITLE">Confirm Your Account</div>
+
+            <form name="confirmForm" ng-submit="vm.confirm()" novalidate>
+                <md-input-container class="md-block" md-no-float>
+                    <input type="text" name="confirmationCode" ng-model="vm.form.confirmationCode"
+                           placeholder="Confirmation Code"
+                           translate translate-attr-placeholder="CONFIRM_V2.CONFIRMATION_CODE"
+                           ng-pattern="/^\d{6}$/" required>
+                    <div ng-messages="confirmForm.email.$error" role="alert" multiple>
+                        <div ng-message="required">
+                            <span translate="CONFIRM_V2.ERRORS.CODE_REQUIRED">Confirmation code is required</span>
+                        </div>
+                        <div ng-message="pattern">
+                            <span
+                                translate="CONFIRM_V2.ERRORS.CODE_MUST_VALID">Code must be exactly 6 digits</span>
+                        </div>
+                    </div>
+                </md-input-container>
+
+                <md-button type="submit" class="md-raised md-accent submit-button" aria-label="RESET MY PASSWORD"
+                           ng-disabled="confirmForm.$invalid || confirmForm.$pristine"
+                           translate="CONFIRM_V2.SEND_RESET_LINK"
+                           translate-attr-aria-label="CONFIRM_V2.CONFIRM">
+                    CONFIRM
+                </md-button>
+
+            </form>
+
+            <div class="resend" layout="row" layout-align="center center">
+                <a class="link" href="" ng-click="vm.resendCode()" translate="CONFIRM_V2.RESEND_CODE">Send verification
+                    code</a>
+            </div>
+        </div>
+    </div>
+</div>

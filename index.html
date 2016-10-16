@@ -1,56 +1,82 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <title>AdMove Advertiser</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- Angular Material style sheet -->
-    <link rel="stylesheet"
-          href="//ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc2/angular-material.min.css">
-    <!-- Custom style sheets -->
-    <link rel="stylesheet" href="styles/app.css">
-    <!-- Google Maps Library -->
-    <script src="https://sdk.amazonaws.com/js/aws-sdk-2.1.41.min.js"></script>
-    <script>
-        AWS.config.region = 'us-east-1';
-    </script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDxYIarCZIq4u6WvBgMm-f96Iuj4ErM5fU"></script>
-</head>
-<body ng-app="app" ng-cloak ng-controller="IndexController">
-
-<div ng-show="!loaded" layout="row" layout-align="center center" style="height: 100%">
-    <div layout="row" style="position: relative; left: -100px; top: -100px">
-        <md-progress-circular class="stroke-blue" md-mode="indeterminate" md-diameter="200px"></md-progress-circular>
-        <md-progress-circular class="stroke-orange reverse" md-mode="indeterminate" md-diameter="160px" style="left: 20px; top: 20px;"></md-progress-circular>
-        <md-progress-circular class="stroke-yellow" md-mode="indeterminate" md-diameter="120px" style="left: 40px; top: 40px"></md-progress-circular>
-        <md-progress-circular class="reverse" md-mode="indeterminate" md-diameter="80px" style="left: 60px; top: 60px"></md-progress-circular>
-    </div>
-</div>
-
-<div ng-view style="height: 100%;"></div>
-
-<!-- Angular Material requires Angular.js Libraries -->
-<script src="//code.angularjs.org/1.5.5/angular.js"></script>
-<script src="//code.angularjs.org/1.5.5/angular-aria.js"></script>
-<script src="//code.angularjs.org/1.5.5/angular-route.js"></script>
-<script src="//code.angularjs.org/1.5.5/angular-cookies.js"></script>
-<script src="//code.angularjs.org/1.5.5/angular-animate.js"></script>
-<script src="//code.angularjs.org/1.5.5/angular-messages.js"></script>
-<script type="text/javascript" src="scripts/google-plus-signin.js"></script>
-
-<!-- Angular Material Library -->
-<script src="//ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc2/angular-material.js"></script>
-
-<!-- Your application bootstrap  -->
-<script src="scripts/app.js"></script>
-<script src="scripts/controllers/index.controller.js"></script>
-<script src="scripts/controllers/home.controller.js"></script>
-<script src="scripts/controllers/login.controller.js"></script>
-<script src="scripts/controllers/register.controller.js"></script>
-<script src="scripts/services/navigation.service.js"></script>
-<script src="scripts/services/auth.service.js"></script>
-<script src="scripts/services/dynamo.service.js"></script>
-<script src="scripts/services/map.service.js"></script>
-<script src="scripts/services/dialog.service.js"></script>
-
-</body>
+<!doctype html><html ng-app="fuse"><head><base href="/"><meta charset="utf-8"><meta name="description" content=""><meta
+ name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1"><title>AdMove - Admin</title><link 
+rel="stylesheet" href="styles/vendor-5149686410.css"><link rel="stylesheet" href="styles/app-d83d3ab13c.css"><link 
+href="//fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700italic,700,900,900italic" 
+rel="stylesheet" type="text/css"></head>
+<!--[if lt IE 10]>
+<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
+    your browser</a> to improve your experience.</p>
+<![endif]-->
+<body md-theme="{{vm.themes.active.name}}" md-theme-watch ng-controller="IndexController as vm" 
+class="{{state.current.bodyClass || ''}}"><ms-splash-screen id="splash-screen"><div class="center"><div class="logo">
+<span>Ad</span></div><div class="spinner-wrapper"><div class="spinner"><div class="inner"><div class="gap"></div><div 
+class="left"><div class="half-circle"></div></div><div class="right"><div class="half-circle"></div></div></div></div>
+</div></div></ms-splash-screen><div id="main" class="animate-slide-up" ui-view="main" layout="column"></div>
+<ms-theme-options></ms-theme-options><script src="scripts/vendor-5eae6dd09c.js"></script><script 
+src="app/main/apps/e-commerce/e-commerce.module.js"></script><script 
+src="app/main/apps/e-commerce/views/products/products.controller.js"></script><script 
+src="app/main/apps/e-commerce/views/product/product.controller.js"></script><script 
+src="app/main/apps/e-commerce/views/orders/orders.controller.js"></script><script 
+src="app/main/apps/e-commerce/views/order/order.controller.js"></script><script 
+src="app/main/apps/e-commerce/views/dashboard/dashboard.controller.js"></script><script 
+src="app/main/pages/auth/register-v2/register-v2.module.js"></script><script 
+src="app/main/pages/auth/register-v2/register-v2.controller.js"></script><script 
+src="app/main/pages/auth/login-v2/login-v2.module.js"></script><script 
+src="app/main/pages/auth/login-v2/login-v2.controller.js"></script><script 
+src="app/main/pages/auth/forgot-password/forgot-password.module.js"></script><script 
+src="app/main/pages/auth/forgot-password/forgot-password.controller.js"></script><script 
+src="app/main/pages/auth/confirm-v2/confirm-v2.module.js"></script><script 
+src="app/main/pages/auth/confirm-v2/confirm-v2.controller.js"></script><script 
+src="app/main/apps/dashboards/server/dashboard-server.module.js"></script><script 
+src="app/main/apps/dashboards/server/dashboard-server.controller.js"></script><script 
+src="app/main/apps/dashboards/project/dashboard-project.module.js"></script><script 
+src="app/main/apps/dashboards/project/dashboard-project.controller.js"></script><script 
+src="app/main/apps/dashboards/analytics/dashboard-analytics.module.js"></script><script 
+src="app/main/apps/dashboards/analytics/dashboard-analytics.controller.js"></script><script 
+src="app/quick-panel/quick-panel.module.js"></script><script src="app/quick-panel/tabs/chat/chat-tab.controller.js">
+</script><script src="app/main/components/maps/maps.module.js"></script><script 
+src="app/main/components/maps/maps.controller.js"></script><script src="app/core/core.module.js"></script><script 
+src="app/core/directives/ms-widget/ms-widget.directive.js"></script><script 
+src="app/core/directives/ms-timeline/ms-timeline.js"></script><script 
+src="app/core/directives/ms-stepper/ms-stepper.directive.js"></script><script 
+src="app/core/directives/ms-splash-screen/ms-splash-screen.directive.js"></script><script 
+src="app/core/directives/ms-sidenav-helper/ms-sidenav-helper.directive.js"></script><script 
+src="app/core/directives/ms-shortcuts/ms-shortcuts.directive.js"></script><script 
+src="app/core/directives/ms-search-bar/ms-search-bar.directive.js"></script><script 
+src="app/core/directives/ms-scroll/ms-scroll.directive.js"></script><script 
+src="app/core/directives/ms-responsive-table/ms-responsive-table.directive.js"></script><script 
+src="app/core/directives/ms-random-class/ms-random-class.directive.js"></script><script 
+src="app/core/directives/ms-navigation/ms-navigation.directive.js"></script><script 
+src="app/core/directives/ms-nav/ms-nav.directive.js"></script><script 
+src="app/core/directives/ms-material-color-picker/ms-material-color-picker.directive.js"></script><script 
+src="app/core/directives/ms-masonry/ms-masonry.directive.js"></script><script 
+src="app/core/directives/ms-info-bar/ms-info-bar.directive.js"></script><script 
+src="app/core/directives/ms-form-wizard/ms-form-wizard.directive.js"></script><script 
+src="app/core/directives/ms-datepicker-fix/ms-datepicker-fix.directive.js"></script><script 
+src="app/core/directives/ms-card/ms-card.directive.js"></script><script src="app/main/sample/sample.module.js">
+</script><script src="app/main/sample/sample.controller.js"></script><script src="app/main/commons/commons.module.js">
+</script><script src="app/main/commons/commons.constants.js"></script><script 
+src="app/core/theming/fuse-theming.service.js"></script><script src="app/core/theming/fuse-theming.config.js"></script>
+<script src="app/core/theming/fuse-themes.constant.js"></script><script 
+src="app/core/theming/fuse-palettes.constant.js"></script><script src="app/core/theming/fuse-generator.service.js">
+</script><script src="app/core/theme-options/theme-options.directive.js"></script><script 
+src="app/core/services/ms-utils.service.js"></script><script src="app/core/services/ms-api.provider.js"></script>
+<script src="app/core/services/api-resolver.service.js"></script><script src="app/core/filters/tag.filter.js"></script>
+<script src="app/core/filters/filterByPropIds.filter.js"></script><script src="app/core/filters/filterByIds.filter.js">
+</script><script src="app/core/filters/basic.filter.js"></script><script src="app/core/filters/altDate.filter.js">
+</script><script src="app/core/directives/highlight.directive.js"></script><script 
+src="app/core/config/fuse-config.provider.js"></script><script src="app/aws/aws.module.js"></script><script 
+src="app/aws/cognito/user.service.js"></script><script src="app/aws/cognito/user-pool.service.js"></script><script 
+src="app/aws/cognito/credentials.service.js"></script><script src="app/toolbar/toolbar.module.js"></script><script 
+src="app/toolbar/toolbar.controller.js"></script><script src="app/quick-panel/quick-panel.controller.js"></script>
+<script src="app/navigation/navigation.module.js"></script><script src="app/navigation/navigation.controller.js">
+</script><script src="app/index.module.js"></script><script src="app/main/main.run.js"></script><script 
+src="app/main/main.navigator.js"></script><script src="app/main/main.controller.js"></script><script 
+src="app/core/core.run.js"></script><script src="app/core/core.config.js"></script><script 
+src="app/aws/aws.utils.service.js"></script><script src="app/aws/aws.constants.js"></script><script 
+src="app/aws/aws.config.js"></script><script src="app/aws/aws.components.factory.js"></script><script 
+src="app/index.run.js"></script><script src="app/index.route.js"></script><script src="app/index.controller.js">
+</script><script src="app/index.constants.js"></script><script src="app/index.config.js"></script><script 
+src="app/index.api.js"></script><script src="app/main/apps/dashboards/dashboards.module.js"></script><script 
+src="app/main/pages/pages.module.js"></script><script src="app/main/components/components.module.js"></script></body>
 </html>
