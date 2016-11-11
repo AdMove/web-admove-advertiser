@@ -1,6 +1,6 @@
 {
     "LOGIN_V2": {
-        "INTRO_TITLE": "Welcome to the FUSE!",
+        "INTRO_TITLE": "Welcome to the AdMove!",
         "INTRO_DESCRIPTION": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ullamcorper nisl erat, vel convallis elit fermentum pellentesque. Sed mollis velit facilisis facilisis viverra.",
         "TITLE": "Log in to your account",
         "DESCRIPTION": "Sed mollis velit facilisis facilisis viverra",
@@ -19,7 +19,9 @@
             "EMAIL_REQUIRED": "Email field is required",
             "USERNAME_REQUIRED": "Username field is required",
             "EMAIL_MUST_VALID": "Email must be a valid e-mail address",
-            "PASSWORD_REQUIRED": "Password field is required"
+            "PASSWORD_REQUIRED": "Password field is required",
+            "USER_DOES_NOT_EXIST": "User does not exist",
+            "INCORRECT_USERNAME_OR_PASSWORD": "Incorrect username or password"
         }
     }
 }
