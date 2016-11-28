@@ -428,8 +428,8 @@
             ]
         },
         "sessions": {
-            "title": "Sessions",
-            "value": "14,710",
+            "title": "Kilometers",
+            "value": "689",
             "chart": [
                 {
                     "key": "Sessions",
@@ -519,8 +519,8 @@
             ]
         },
         "pageviews": {
-            "title": "Pageviews",
-            "value": "101,961",
+            "title": "Impressions",
+            "value": "59,954",
             "chart": [
                 {
                     "key": "Pageviews",

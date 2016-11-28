@@ -1026,24 +1026,16 @@
         "title": "Budget Distribution",
         "mainChart": [
             {
-                "label": "Wireframing",
-                "value": 12
+                "label": "Car Wrapping",
+                "value": 300
             },
             {
                 "label": "Design",
-                "value": 17
+                "value": 0
             },
             {
-                "label": "Coding",
-                "value": 28
-            },
-            {
-                "label": "Marketing",
-                "value": 25
-            },
-            {
-                "label": "Extra",
-                "value": 15
+                "label": "Driver Payment",
+                "value": 130
             }
         ]
     },
@@ -1057,9 +1049,9 @@
         "weeklySpent": {
             "title": "WEEKLY SPENT",
             "count": {
-                "2W": "2,682.85",
-                "LW": "1,445.34",
-                "TW": "3,630.15"
+                "2W": "300,00",
+                "LW": "400,00",
+                "TW": "400,00"
             },
             "chart": {
                 "label": "Weekly Spent",
@@ -1067,11 +1059,11 @@
                     "2W": [
                         {
                             "x": 0,
-                            "y": 6
+                            "y": 3
                         },
                         {
                             "x": 1,
-                            "y": 1
+                            "y": 3
                         },
                         {
                             "x": 2,
@@ -1079,19 +1071,19 @@
                         },
                         {
                             "x": 3,
-                            "y": 4
+                            "y": 3
                         },
                         {
                             "x": 4,
-                            "y": 5
+                            "y": 3
                         },
                         {
                             "x": 5,
-                            "y": 5
+                            "y": 3
                         },
                         {
                             "x": 6,
-                            "y": 2
+                            "y": 3
                         }
                     ],
                     "LW": [
@@ -1101,23 +1093,23 @@
                         },
                         {
                             "x": 1,
-                            "y": 6
+                            "y": 4
                         },
                         {
                             "x": 2,
-                            "y": 2
+                            "y": 4
                         },
                         {
                             "x": 3,
-                            "y": 2
+                            "y": 4
                         },
                         {
                             "x": 4,
-                            "y": 1
+                            "y": 4
                         },
                         {
                             "x": 5,
-                            "y": 3
+                            "y": 4
                         },
                         {
                             "x": 6,
@@ -1127,15 +1119,15 @@
                     "TW": [
                         {
                             "x": 0,
-                            "y": 2
+                            "y": 4
                         },
                         {
                             "x": 1,
-                            "y": 6
+                            "y": 4
                         },
                         {
                             "x": 2,
-                            "y": 5
+                            "y": 4
                         },
                         {
                             "x": 3,
@@ -1143,15 +1135,15 @@
                         },
                         {
                             "x": 4,
-                            "y": 5
+                            "y": 4
                         },
                         {
                             "x": 5,
-                            "y": 3
+                            "y": 4
                         },
                         {
                             "x": 6,
-                            "y": 6
+                            "y": 4
                         }
                     ]
                 }
@@ -1160,9 +1152,9 @@
         "totalSpent": {
             "title": "TOTAL SPENT",
             "count": {
-                "2W": "29,682.85",
-                "LW": "31,128.19",
-                "TW": "34,758.34"
+                "2W": "300,00",
+                "LW": "400,00",
+                "TW": "400,00"
             },
             "chart": {
                 "label": "Spent",
@@ -1174,49 +1166,49 @@
                         },
                         {
                             "x": 1,
-                            "y": 2
+                            "y": 3
                         },
                         {
                             "x": 2,
-                            "y": 2
+                            "y": 3
                         },
                         {
                             "x": 3,
-                            "y": 4
+                            "y": 3
                         },
                         {
                             "x": 4,
-                            "y": 7
+                            "y": 3
                         },
                         {
                             "x": 5,
-                            "y": 7
+                            "y": 3
                         },
                         {
                             "x": 6,
-                            "y": 4
+                            "y": 3
                         }
                     ],
                     "LW": [
                         {
                             "x": 0,
-                            "y": 5
+                            "y": 4
                         },
                         {
                             "x": 1,
-                            "y": 7
+                            "y": 4
                         },
                         {
                             "x": 2,
-                            "y": 8
+                            "y": 4
                         },
                         {
                             "x": 3,
-                            "y": 8
+                            "y": 4
                         },
                         {
                             "x": 4,
-                            "y": 6
+                            "y": 4
                         },
                         {
                             "x": 5,
@@ -1224,29 +1216,29 @@
                         },
                         {
                             "x": 6,
-                            "y": 1
+                            "y": 4
                         }
                     ],
                     "TW": [
                         {
                             "x": 0,
-                            "y": 6
+                            "y": 4
                         },
                         {
                             "x": 1,
-                            "y": 3
+                            "y": 4
                         },
                         {
                             "x": 2,
-                            "y": 7
+                            "y": 4
                         },
                         {
                             "x": 3,
-                            "y": 5
+                            "y": 4
                         },
                         {
                             "x": 4,
-                            "y": 5
+                            "y": 4
                         },
                         {
                             "x": 5,
@@ -1254,7 +1246,7 @@
                         },
                         {
                             "x": 6,
-                            "y": 7
+                            "y": 4
                         }
                     ]
                 }
@@ -1263,9 +1255,9 @@
         "remaining": {
             "title": "REMAINING",
             "count": {
-                "2W": "94.317,15",
-                "LW": "92.871,81",
-                "TW": "89.241,66"
+                "2W": "700,00",
+                "LW": "600,00",
+                "TW": "600,00"
             },
             "chart": {
                 "label": "Remaining",
@@ -1273,11 +1265,11 @@
                     "2W": [
                         {
                             "x": 0,
-                            "y": 1
+                            "y": 5
                         },
                         {
                             "x": 1,
-                            "y": 4
+                            "y": 5
                         },
                         {
                             "x": 2,
@@ -1285,33 +1277,33 @@
                         },
                         {
                             "x": 3,
-                            "y": 7
+                            "y": 5
                         },
                         {
                             "x": 4,
-                            "y": 8
+                            "y": 5
                         },
                         {
                             "x": 5,
-                            "y": 2
+                            "y": 5
                         },
                         {
                             "x": 6,
-                            "y": 4
+                            "y": 5
                         }
                     ],
                     "LW": [
                         {
                             "x": 0,
-                            "y": 3
+                            "y": 4
                         },
                         {
                             "x": 1,
-                            "y": 2
+                            "y": 4
                         },
                         {
                             "x": 2,
-                            "y": 1
+                            "y": 4
                         },
                         {
                             "x": 3,
@@ -1319,11 +1311,11 @@
                         },
                         {
                             "x": 4,
-                            "y": 8
+                            "y": 4
                         },
                         {
                             "x": 5,
-                            "y": 8
+                            "y": 4
                         },
                         {
                             "x": 6,
@@ -1333,7 +1325,7 @@
                     "TW": [
                         {
                             "x": 0,
-                            "y": 2
+                            "y": 4
                         },
                         {
                             "x": 1,
@@ -1341,23 +1333,23 @@
                         },
                         {
                             "x": 2,
-                            "y": 8
+                            "y": 4
                         },
                         {
                             "x": 3,
-                            "y": 6
+                            "y": 4
                         },
                         {
                             "x": 4,
-                            "y": 2
+                            "y": 4
                         },
                         {
                             "x": 5,
-                            "y": 5
+                            "y": 4
                         },
                         {
                             "x": 6,
-                            "y": 1
+                            "y": 4
                         }
                     ]
                 }
@@ -1365,11 +1357,11 @@
         },
         "totalRemaining": {
             "title": "TOTAL BUDGET",
-            "count": "124.000,00"
+            "count": "1.000,00"
         },
         "totalBudget": {
             "title": "TOTAL BUDGET",
-            "count": "124.000,00"
+            "count": "1.000,00"
         }
     },
     "widget10": {
@@ -1398,32 +1390,32 @@
             "rows": [
                 [
                     {
-                        "value": "Wireframing",
+                        "value": "Car Wrapping",
                         "classes": "text-boxed m-0 deep-orange-bg white-fg",
                         "icon": ""
                     },
                     {
-                        "value": "$14,880.00",
+                        "value": "$300.00",
                         "classes": "text-bold",
                         "icon": ""
                     },
                     {
-                        "value": "$14,000.00",
+                        "value": "$300.00",
                         "classes": "",
                         "icon": ""
                     },
                     {
-                        "value": "%94.08",
+                        "value": "%100.00",
                         "classes": "red-fg",
                         "icon": "icon icon-trending-up s14 red-fg"
                     },
                     {
-                        "value": "$880.00",
+                        "value": "$0.00",
                         "classes": "",
                         "icon": ""
                     },
                     {
-                        "value": "%5.92",
+                        "value": "%0.00",
                         "classes": "",
                         "icon": ""
                     }
@@ -1435,123 +1427,59 @@
                         "icon": ""
                     },
                     {
-                        "value": "$21,080.00",
+                        "value": "$0.00",
                         "classes": "text-bold",
                         "icon": ""
                     },
                     {
-                        "value": "$17,240.34",
+                        "value": "$0.00",
                         "classes": "",
                         "icon": ""
                     },
                     {
-                        "value": "%81.78",
+                        "value": "%100.00",
                         "classes": "red-fg",
                         "icon": "icon icon-trending-up s14 red-fg"
                     },
                     {
-                        "value": "$3,839.66",
+                        "value": "$0.00",
                         "classes": "",
                         "icon": ""
                     },
                     {
-                        "value": "%18.22",
+                        "value": "%0.00",
                         "classes": "",
                         "icon": ""
                     }
                 ],
                 [
                     {
-                        "value": "Coding",
+                        "value": "Driver Payment",
                         "classes": "text-boxed m-0 light-blue-bg white-fg",
                         "icon": ""
                     },
                     {
-                        "value": "$34,720.00",
+                        "value": "$700.00",
                         "classes": "text-bold",
                         "icon": ""
                     },
                     {
-                        "value": "$3,518.00",
+                        "value": "$130.00",
                         "classes": "",
                         "icon": ""
                     },
                     {
-                        "value": "%10.13",
+                        "value": "%18.50",
                         "classes": "green-fg",
                         "icon": "icon icon-trending-down s14 green-fg"
                     },
                     {
-                        "value": "$31,202.00",
+                        "value": "$570.00",
                         "classes": "",
                         "icon": ""
                     },
                     {
-                        "value": "%89.87",
-                        "classes": "",
-                        "icon": ""
-                    }
-                ],
-                [
-                    {
-                        "value": "Marketing",
-                        "classes": "text-boxed m-0 pink-bg white-fg",
-                        "icon": ""
-                    },
-                    {
-                        "value": "$34,720.00",
-                        "classes": "text-bold",
-                        "icon": ""
-                    },
-                    {
-                        "value": "$0.00",
-                        "classes": "",
-                        "icon": ""
-                    },
-                    {
-                        "value": "%0.00",
-                        "classes": "green-fg",
-                        "icon": "icon icon-minus s14 green-fg"
-                    },
-                    {
-                        "value": "$34,720.00",
-                        "classes": "",
-                        "icon": ""
-                    },
-                    {
-                        "value": "%100.00",
-                        "classes": "",
-                        "icon": ""
-                    }
-                ],
-                [
-                    {
-                        "value": "Extra",
-                        "classes": "text-boxed m-0 amber-bg white-fg",
-                        "icon": ""
-                    },
-                    {
-                        "value": "$18,600.00",
-                        "classes": "text-bold",
-                        "icon": ""
-                    },
-                    {
-                        "value": "$0.00",
-                        "classes": "",
-                        "icon": ""
-                    },
-                    {
-                        "value": "%0.00",
-                        "classes": "green-fg",
-                        "icon": "icon icon-minus s14 green-fg"
-                    },
-                    {
-                        "value": "$34,720.00",
-                        "classes": "",
-                        "icon": ""
-                    },
-                    {
-                        "value": "%100.00",
+                        "value": "%92.50",
                         "classes": "",
                         "icon": ""
                     }
@@ -1748,8 +1676,8 @@
     },
     "weatherWidget": {
         "locations": {
-            "NewYork": {
-                "name": "New York",
+            "Tbilisi": {
+                "name": "Tbilisi",
                 "icon": "icon-weather-pouring",
                 "temp": {
                     "C": "22",
@@ -1789,7 +1717,7 @@
                 ]
             }
         },
-        "currentLocation": "NewYork",
+        "currentLocation": "Tbilisi",
         "tempUnit": "C",
         "speedUnit": "KMH"
     }
